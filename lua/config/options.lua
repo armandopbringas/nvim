@@ -45,3 +45,4 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.filetype = "csv"
   end,
 })
+
