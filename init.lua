@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("notes").setup()
 -- Abrir el panel de bases de datos
 vim.keymap.set("n", "<leader>du", ":DBUI<CR>", { desc = "Abrir DBUI" })
 
@@ -35,4 +36,9 @@ vim.g.dbs = {
 
   -- SQL Server corriendo en Docker
   sqlsrv_local = "sqlserver://sa:Thread4-Iphone-Sincerity-Seventeen@localhost:1433/master",
+
+  -- PostgreSQL corriendo en Docker (prioriza variables de entorno)
+  docker_postgres = os.getenv("DB_DOCKER_URL")
+    or os.getenv("DATABASE_URL")
+    or "postgres://postgres:postgres@127.0.0.1:5432/postgres",
 }
