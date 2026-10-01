@@ -13,4 +13,13 @@ return {
     "olimorris/onedarkpro.nvim",
     lazy = false,
   },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight-night",
+    },
+    init = function()
+      require("config.retrobox").setup()
+    end,
+  },
 }

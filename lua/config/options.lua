@@ -36,12 +36,6 @@ vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { silent = true })
 vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { silent = true })
 
 -- =========================================================
--- 🗃️  Dadbod: salida dbout como CSV
+-- 🗃️ DadbodUI: conserva `dbout` para que funcionen su sintaxis y mapeos.
+-- MySQL entrega los resultados como tabla de texto (`mysql -t`), no como CSV.
 -- =========================================================
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "dbout",
-  callback = function()
-    vim.bo.filetype = "csv"
-  end,
-})
