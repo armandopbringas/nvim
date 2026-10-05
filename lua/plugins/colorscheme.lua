@@ -15,11 +15,14 @@ return {
   },
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight-night",
-    },
+    opts = function()
+      return {
+        colorscheme = require("config.tmux_theme").colorscheme(),
+      }
+    end,
     init = function()
       require("config.retrobox").setup()
+      require("config.tmux_theme").setup()
     end,
   },
 }
